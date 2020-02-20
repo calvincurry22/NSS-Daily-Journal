@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <h1>Daily Journal</h1>
+    <form action="">
+        <fieldset>
+           <label for="date">Enter Today's Date:</label>
+           <input type="date" name ="date" id="date" required> 
+        </fieldset>
+
+        <fieldset>
+            <label for="concepts">What Concepts did you cover?</label>
+            <input type="text" id="concepts" required>
+        </fieldset>
+
+        <fieldset>
+            <label for="journal-entry">Journal Entry:</label>
+            <input type="textarea" id="journal__entry" required>
+        </fieldset>
+
+        <fieldset>
+            <label for="mood">Describe your current mood:</label>
+            <select name="mood" id="mood">
+                <option value="happy">Happy</option>
+                <option value="content"> Content</option>
+                <option value="nervous">Nervous</option>
+                <option value="discouraged">Discouraged</option>
+                <option value="exhausted">Exhausted</option>
+            </select>
+        </fieldset>
+        
+        <div class="journal__button">
+            <button class="button">Record Journal Entry</button>
+        </div>
+    </form>
+</body>
+</html>
