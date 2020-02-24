@@ -6,26 +6,27 @@
     <title>Daily Journal</title>
     <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
     <h1>Daily Journal</h1>
     <form action="">
-        <fieldset>
-           <label for="date">Enter Today's Date:</label>
+        <fieldset id="date-field">
+           <label for="date" id="date-label">Enter Today's Date</label>
            <input type="date" name ="date" id="date" required> 
         </fieldset>
 
-        <fieldset>
-            <label for="concepts">What Concepts did you cover?</label>
+        <fieldset id="concepts-field">
+            <label for="concepts" id="concepts-label">What concepts did you cover?</label>
             <input type="text" id="concepts" required>
         </fieldset>
 
-        <fieldset>
-            <label for="journal-entry">Journal Entry:</label>
-            <input type="textarea" id="journal__entry" required>
+        <fieldset id="entry-field">
+            <label for="journal-entry" id="entry-label">Journal Entry:</label>
+            <textarea  id="journal__entry" required></textarea>
         </fieldset>
 
-        <fieldset>
-            <label for="mood">Describe your current mood:</label>
+        <fieldset id="mood-field">
+            <label for="mood" id="mood-label">Describe your current mood</label>
             <select name="mood" id="mood">
                 <option value="happy">Happy</option>
                 <option value="content"> Content</option>
@@ -40,4 +41,5 @@
         </div>
     </form>
 </body>
+
 </html>
