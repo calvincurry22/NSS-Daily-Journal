@@ -1,32 +1,29 @@
 body {
-    background: url("https://c.stocksy.com/a/s7Z900/z9/2279980.jpg?1575720041");
+    background: url("https://dcdigital.ca/ang/wp-content/uploads/2019/11/laptop.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 
-h1 {
-    
+.heading {
+    margin-top: 0px;
     font-size: 60px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    -webkit-text-stroke: 1px black;
-   color: white;
-   text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000
+    font-family: 'Montserrat';
+    color:black;
+  
 }
 
 fieldset {
-    background: url("https://thumbs.dreamstime.com/b/crumpled-notebook-paper-perfect-to-use-as-background-letter-sheet-paper-school-notebook-crumpled-notebook-paper-background-149143144.jpg");
-    border: solid black;
+    background: url("https://media.istockphoto.com/vectors/notebook-paper-background-yellow-lined-paper-vector-id961356552?k=6&m=961356552&s=170667a&w=0&h=Zsbe3erbBQj1drfF0RNOOoPZ_BBPZGmzlac7wDNecYg=");
+    border: 1.5px solid darkslategrey;
+    border-radius: 4px;
+    box-shadow: -3px 4px 6px 0px rgba(50, 50, 50, 0.5);
     display: flex;
+    font-family: "Montserrat";
     flex-direction: column;
-    margin: 20px 0px 0px 400px;
+    margin: 20px 0px 0px 30px;
     opacity: 0.96;
-    width: 50%
+    width: 35%
 }
 
 #date-field {
@@ -37,14 +34,14 @@ fieldset {
 #date {
     border: 1px solid black;
     width: 150px;
-    margin-left: 40%;
+    margin-left: 35.5%;
     opacity: 0.7;
 }
 
 #date-label {
     font-size: 18px;
-    margin-left: 40.25%;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -72,6 +69,7 @@ fieldset {
 #concepts-label {
     font-size: 18px;
     font-weight: bolder;
+    text-align: center;
 }
 
 #journal__entry {
@@ -90,12 +88,15 @@ fieldset {
 #entry-label {
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
     }
 
 .button {
-    background-color: mediumseagreen;
-    border: solid;
+    background-color: limegreen;
+    box-shadow: 1px 1px 0px #2b638f;
+    border: 1.5px solid darkslategrey;
     border-radius:5px;
+    font-family: "Montserrat";
     font-weight: bold;
-    margin-left: 48%;
+    margin-left: 15%;
 }
