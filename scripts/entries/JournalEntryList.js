@@ -4,8 +4,18 @@
  *    there are items in the collection exposed by the
  *    data provider component
  */
-import { useJournalEntries } from "./JournalDataProvider.js"
+import { useJournalEntries, getEntries } from "./JournalDataProvider.js"
 import JournalEntryComponent from "./JournalEntry.js"
+
+
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("entryStateChanged", changeEvent => {
+    getEntries()
+        .then(EntryListComponent)
+
+})
+
 
 // DOM reference to where all entries will be rendered
 const contentTarget = document.querySelector("#entryLog");

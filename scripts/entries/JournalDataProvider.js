@@ -10,10 +10,23 @@
 
 let journalEntries = []
 
+
+
+const eventHub = document.querySelector(".container")
+
+const dispatchStateChangeEvent = () => {
+    const entryStateChangedEvent = new CustomEvent("entryStateChanged")
+
+    eventHub.dispatchEvent(entryStateChangedEvent)
+}
+
+
+
+
 export const getEntries = () => {
    return fetch('http://localhost:3000/entries')
         .then(response => response.json())
-        .then(parsedResponse => (journalEntries = parsedResponse.slice()));
+        .then(parsedResponse => (journalEntries = parsedResponse))
 }
 
 
@@ -23,7 +36,8 @@ export const getEntries = () => {
     raw data in the format that you want
 */
 export const useJournalEntries = () => {
-    const sortedByDate = journalEntries.sort(
+    const journalEntriesArray = journalEntries.slice()
+    const sortedByDate = journalEntriesArray.sort(
         (currentEntry, nextEntry) =>
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
     )
@@ -31,6 +45,18 @@ export const useJournalEntries = () => {
 }
  
 
+
+export const saveEntry = entry => {
+    return fetch('http://localhost:3000/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
 
 
 

@@ -1,18 +1,44 @@
+import { saveEntry } from "../entries/JournalDataProvider.js"
+
+
+
+const contentTarget = document.querySelector("#journalForm")
+
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "recordEntry") {
+
+            const entryDate = document.querySelector("#date").value
+            const entryConcept = document.querySelector("#concepts").value
+            const entryText = document.querySelector("#journal__entry").value
+            const entryMood = document.querySelector("#mood").value
+
+            const newEntry = {
+                date: entryDate,
+                concept: entryConcept,
+                entry: entryText,
+                mood: entryMood
+            }
+
+        saveEntry(newEntry)
+    }
+})
+
 
 export const JournalFormComponent = () => {
-    const contentTarget = document.querySelector(".journalForm")
+    
 
     contentTarget.innerHTML = 
      `
     <form action="">
     <fieldset id="date-field">
        <label for="date" id="date-label">Enter Today's Date</label>
-       <input type="date" name ="date" id="date" required> 
+       <input type="date" name ="date" id="date" required /> 
     </fieldset>
 
     <fieldset id="concepts-field">
         <label for="concepts" id="concepts-label">What concepts did you cover?</label>
-        <input type="text" id="concepts" required>
+        <input type="text" id="concepts" required />
     </fieldset>
 
     <fieldset id="entry-field">
@@ -31,13 +57,14 @@ export const JournalFormComponent = () => {
         </select>
     </fieldset>
     
-    <div class="journal__button">
-        <button class="button">Record Journal Entry</button>
-    </div>
 </form>
-    
+
+    <div class="journal__button">
+        <button class="button" id="recordEntry">Record Journal Entry</button>
+</div>
     
     
     `
 }
+
 
