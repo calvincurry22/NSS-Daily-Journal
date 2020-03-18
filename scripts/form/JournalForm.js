@@ -4,6 +4,12 @@ import { saveEntry } from "../entries/JournalDataProvider.js"
 
 const contentTarget = document.querySelector("#journalForm")
 
+const clearEntry = () => {
+    document.querySelector("#date").value = null
+    document.querySelector("#concepts").value = " "
+    document.querySelector("#journal__entry").value = " "
+    document.querySelector("#mood").value = " "
+}
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "recordEntry") {
@@ -20,8 +26,11 @@ contentTarget.addEventListener("click", clickEvent => {
                 mood: entryMood
             }
 
-        saveEntry(newEntry)
-    }
+        saveEntry(newEntry).then(
+            clearEntry
+        )
+       
+        }
 })
 
 
@@ -49,11 +58,11 @@ export const JournalFormComponent = () => {
     <fieldset id="mood-field">
         <label for="mood" id="mood-label">Describe your current mood</label>
         <select name="mood" id="mood">
-            <option value="happy">Happy</option>
-            <option value="content"> Content</option>
-            <option value="nervous">Nervous</option>
-            <option value="discouraged">Discouraged</option>
-            <option value="exhausted">Exhausted</option>
+            <option value="Happy">Happy</option>
+            <option value="Content"> Content</option>
+            <option value="Nervous">Nervous</option>
+            <option value="Discouraged">Discouraged</option>
+            <option value="Exhausted">Exhausted</option>
         </select>
     </fieldset>
     
