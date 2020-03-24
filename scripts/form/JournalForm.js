@@ -39,7 +39,7 @@ export const JournalFormComponent = () => {
 
     contentTarget.innerHTML = 
      `
-    <form action="">
+    <form action="" id=formComponent>
     <fieldset id="date-field">
        <label for="date" id="date-label">Enter Today's Date</label>
        <input type="date" name ="date" id="date" required /> 
