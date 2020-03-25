@@ -4,7 +4,7 @@
  *    there are items in the collection exposed by the
  *    data provider component
  */
-import { useJournalEntries, getEntries } from "./JournalDataProvider.js"
+import { useJournalEntries, getEntries, deleteEntry } from "./JournalDataProvider.js"
 import JournalEntryComponent from "./JournalEntry.js"
 
 
@@ -36,4 +36,22 @@ const EntryListComponent = () => {
 export default EntryListComponent
 
 
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteEntry(id).then(
+           () => {
+             EntryListComponent()  
+           }
+       )
+    }
+})
 

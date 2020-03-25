@@ -5,7 +5,7 @@ import { saveEntry } from "../entries/JournalDataProvider.js"
 const contentTarget = document.querySelector("#journalForm")
 
 const clearEntry = () => {
-    document.querySelector("#date").value = null
+    document.querySelector("#dateInput").value = null
     document.querySelector("#concepts").value = " "
     document.querySelector("#journal__entry").value = " "
     document.querySelector("#mood").value = " "
@@ -14,7 +14,7 @@ const clearEntry = () => {
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "recordEntry") {
 
-            const entryDate = document.querySelector("#date").value
+            const entryDate = document.querySelector("#dateInput").value
             const entryConcept = document.querySelector("#concepts").value
             const entryText = document.querySelector("#journal__entry").value
             const entryMood = document.querySelector("#mood").value
@@ -42,7 +42,7 @@ export const JournalFormComponent = () => {
     <form action="" id=formComponent>
     <fieldset id="date-field">
        <label for="date" id="date-label">Enter Today's Date</label>
-       <input type="date" name ="date" id="date" required /> 
+       <input type="date" name ="date" id="dateInput" required /> 
     </fieldset>
 
     <fieldset id="concepts-field">

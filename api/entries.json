@@ -20,13 +20,6 @@
       "concept": "Using JS to create HTML",
       "entry": "We talked about using JS to dynamically add HTML to the DOM. Reviewed query selectors, event listeners, and how to create separate js files to fulfill the single responsibility princpile",
       "mood": "Content"
-    },
-    {
-      "date": "2020-03-18",
-      "concept": "TESTING THE APPLICATION",
-      "entry": "test",
-      "mood": "nervous",
-      "id": 4
     }
   ]
 }

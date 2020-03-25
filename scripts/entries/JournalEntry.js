@@ -9,6 +9,7 @@ const JournalEntryComponent = (entry) => {
             <p>Concept: ${entry.concept}</p>
             <p>Entry: ${entry.entry}</p>
             <p>Overall Mood: ${entry.mood}</p>
+            <button id="deleteEntry--${entry.id}">Delete</button>
         </section>
     `
 }
